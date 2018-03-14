@@ -1,7 +1,5 @@
 
-
-
-  let board = [
+let board = [
    "-","-","-",
    "-","-","-",
    "-","-","-"
@@ -11,14 +9,28 @@
   let player2 = 'X';
 
   let player1Next = true;
+  let result = false;
 
-
-const render = function (board) {
+const render = function () {
   for (var i = 0; i < board.length; i++) {
     $('#' + i ).html( board[i])
   }
-
 }
+
+const reset = function () {
+  board = [
+     "-","-","-",
+     "-","-","-",
+     "-","-","-"
+    ]
+  render();
+}
+
+
+let counter = 0;
+
+$( document ).ready(function() {
+  result = false;
 
   const playTurn = function (cell) {
 
@@ -31,14 +43,13 @@ const render = function (board) {
       board[cell] = "O";
       player1Next = true;
     }
-    console.log(board);
+    // console.log(board);
     render(board)
+    counter ++;
+    // console.log(counter);
+    checkWin(counter);
+
   }
-
-
-
-$( document ).ready(function() {
-
 
 
 $( ".cell" ).click(function() {
@@ -46,10 +57,12 @@ $( ".cell" ).click(function() {
   let arrayPosition = parseInt($(this).attr('id'));
   // console.log(arrayPosition);
   // console.log(board);
-  playTurn(arrayPosition);
+  if(!result){playTurn(arrayPosition);}
+
 });
 
-const checkWin = function () {
+const checkWin = function (counter) {
+
   if ( (board[0] === player1 && board[1] ===  player1 && board[2] === player1 )
     || (board[3] === player1 && board[4] ===  player1 && board[5] === player1 )
     || (board[6] === player1 && board[7] ===  player1 && board[8] === player1 )
@@ -58,14 +71,45 @@ const checkWin = function () {
     || (board[0] === player1 && board[3] ===  player1 && board[6] === player1 )
     || (board[1] === player1 && board[4] ===  player1 && board[7] === player1 )
     || (board[2] === player1 && board[5] ===  player1 && board[8] === player1 )) {
+    result = true;
+    let winMessage = `Congratulations, ${player1} you won!`
+    $('.winner').html(winMessage);
 
-       // gameWon = true;
+
+
+
+  } else if (
+     (board[0] === player2 && board[1] ===  player2 && board[2] === player2 )
+  || (board[3] === player2 && board[4] ===  player2 && board[5] === player2 )
+  || (board[6] === player2 && board[7] ===  player2 && board[8] === player2 )
+  || (board[0] === player2 && board[4] ===  player2 && board[8] === player2 )
+  || (board[2] === player2 && board[4] ===  player2 && board[6] === player2 )
+  || (board[0] === player2 && board[3] ===  player2 && board[6] === player2 )
+  || (board[1] === player2 && board[4] ===  player2 && board[7] === player2 )
+  || (board[2] === player2 && board[5] ===  player2 && board[8] === player2 )) {
+  result = true;
+  let winMessage = `Congratulations, ${player2} you won!`
+  $('.winner').html(winMessage);
+
+  // reset();
+
+  }
+
+  else if (counter === 9){
+
+    let drawMessage = `It's a draw!`
+    $('.winner').html(drawMessage);
+
+    // reset();
 
   }
 }
 
+$('#button').on('click', function() {
+  console.log("this is a click");
+  reset();
 
 
-
+});
 
 });
