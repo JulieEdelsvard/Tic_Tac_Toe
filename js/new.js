@@ -7,9 +7,13 @@ let board = [
 
   let player1 = 'O';
   let player2 = 'X';
-
   let player1Next = true;
   let result = false;
+  let counter = 0;
+  // let score = 0;
+  let playerOneScore = 0
+  let playerTwoScore = 0
+
 
 const render = function () {
   for (var i = 0; i < board.length; i++) {
@@ -24,13 +28,15 @@ const reset = function () {
      "-","-","-"
     ]
   render();
+  result = false;
+  $('.winner').html("")
+  counter = 0;
 }
 
 
-let counter = 0;
-
 $( document ).ready(function() {
   result = false;
+
 
   const playTurn = function (cell) {
 
@@ -43,21 +49,20 @@ $( document ).ready(function() {
       board[cell] = "O";
       player1Next = true;
     }
-    // console.log(board);
+
     render(board)
     counter ++;
-    // console.log(counter);
     checkWin(counter);
+    playerOneScore ++;
+
 
   }
 
 
 $( ".cell" ).click(function() {
-  // console.log($(this).attr('id'));
+  console.log("clickety");
   let arrayPosition = parseInt($(this).attr('id'));
-  // console.log(arrayPosition);
-  // console.log(board);
-  if(!result){playTurn(arrayPosition);}
+  if (!result) { playTurn(arrayPosition) }
 
 });
 
@@ -73,9 +78,13 @@ const checkWin = function (counter) {
     || (board[2] === player1 && board[5] ===  player1 && board[8] === player1 )) {
     result = true;
     let winMessage = `Congratulations, ${player1} you won!`
+    // let playerOneScoreMessage = `Player 1 score: ${playerOneScore}`
+
+
+    // playerOneScore ++;
+    console.log(playerOneScore);
     $('.winner').html(winMessage);
-
-
+    // $('.third').html(playerOneScoreMessage);
 
 
   } else if (
@@ -89,9 +98,9 @@ const checkWin = function (counter) {
   || (board[2] === player2 && board[5] ===  player2 && board[8] === player2 )) {
   result = true;
   let winMessage = `Congratulations, ${player2} you won!`
+  // playerTwoScore ++
+  console.log(playerTwoScore);
   $('.winner').html(winMessage);
-
-  // reset();
 
   }
 
@@ -100,16 +109,24 @@ const checkWin = function (counter) {
     let drawMessage = `It's a draw!`
     $('.winner').html(drawMessage);
 
-    // reset();
-
   }
 }
 
+const score = function () {
+  result = 0;
+  if (result = true) {
+    playerOneScore ++
+    let playerOneScoreMessage = `Player 1 score: ${playerOneScore}`
+    $('.third').html(playerOneScoreMessage);
+  }
+}
+
+
 $('#button').on('click', function() {
-  console.log("this is a click");
   reset();
-
-
 });
+
+
+
 
 });
