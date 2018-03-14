@@ -53,14 +53,13 @@ $( document ).ready(function() {
     render(board)
     counter ++;
     checkWin(counter);
-    playerOneScore ++;
+    // playerOneScore ++;
 
 
   }
 
 
 $( ".cell" ).click(function() {
-  console.log("clickety");
   let arrayPosition = parseInt($(this).attr('id'));
   if (!result) { playTurn(arrayPosition) }
 
@@ -78,13 +77,11 @@ const checkWin = function (counter) {
     || (board[2] === player1 && board[5] ===  player1 && board[8] === player1 )) {
     result = true;
     let winMessage = `Congratulations, ${player1} you won!`
-    // let playerOneScoreMessage = `Player 1 score: ${playerOneScore}`
-
-
-    // playerOneScore ++;
-    console.log(playerOneScore);
     $('.winner').html(winMessage);
-    // $('.third').html(playerOneScoreMessage);
+
+    playerOneScore ++;
+    let playerOneScoreMessage = `Player 1 score: ${playerOneScore}`
+    $('#playerOneScore').html(playerOneScoreMessage);
 
 
   } else if (
@@ -98,9 +95,11 @@ const checkWin = function (counter) {
   || (board[2] === player2 && board[5] ===  player2 && board[8] === player2 )) {
   result = true;
   let winMessage = `Congratulations, ${player2} you won!`
-  // playerTwoScore ++
-  console.log(playerTwoScore);
   $('.winner').html(winMessage);
+
+  playerTwoScore ++;
+  let playerTwoScoreMessage = `Player 2 score: ${playerTwoScore}`
+  $('#playerTwoScore').html(playerTwoScoreMessage);
 
   }
 
@@ -112,21 +111,9 @@ const checkWin = function (counter) {
   }
 }
 
-const score = function () {
-  result = 0;
-  if (result = true) {
-    playerOneScore ++
-    let playerOneScoreMessage = `Player 1 score: ${playerOneScore}`
-    $('.third').html(playerOneScoreMessage);
-  }
-}
-
-
 $('#button').on('click', function() {
   reset();
 });
-
-
 
 
 });
