@@ -72,8 +72,8 @@ table tr td:last-child {
   display: block;
   margin: 20px auto;
   text-align: center;
-  background-color: white;
-  color: black;
+  /* background-color: white; */
+  color: white;
   font-size: 25px;
   font-family: 'Monoton', cursive;
 
