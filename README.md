@@ -1,3 +1,4 @@
+
 # Tic Tac Toe - The Mustache Edition
 
 ## About the project
@@ -8,12 +9,16 @@ This Tic Tac Toe game has been built as my first project of my Web Development c
 
 The object of Tic Tac Toe is to get three in a row, playing on a three by three game board. Players alternate placing their tokens on the game board until either someone got three in a row or all nine squares are filled.
 
-## Framework Used
+## Frameworks used
 
 * HTML
 * CSS
 * JavaScript
 * jQuery
+
+## Demo
+
+<!-- Screenshots of projects -->
 
 ## Links
 
