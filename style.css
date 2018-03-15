@@ -1,49 +1,45 @@
+
+
 body {
-  background: url(https://cdn.pixabay.com/photo/2017/09/05/23/01/background-2719572_960_720.jpg);
+
+  background: #b0cdc0;
   background-size: cover;
-}
-
-div {
-  border: red solid 1px;
-}
-
-table {
-    border: red solid 1px;
 }
 
 .third {
   display: inline-block;
-  /* width: 25%; */
 }
 
 .container {
-  width: 80%;
+  display: flex;
+  width: 100%;
   margin: 0 auto;
+  text-align: center;
+  align-items:center;
 }
 
 h1 {
   margin: 20px auto;
-  font-family: 'Indie Flower', cursive;
+  font-family: 'Monoton', cursive;
   font-size: 60px;
   text-align: center;
-  color: #595ca1;
+  color: white;
 }
 
 td {
-  border: 5px solid #595ca1;
+  border: 5px solid white;
   height: 120px;
   width: 120px;
   text-align: center;
   vertical-align: middle;
-  font-family: 'Indie Flower', cursive;
+  font-family: 'Monoton', cursive;
   font-size: 70px;
-  color: #8588bc;
+  color: white;
   cursor: pointer;
 }
 
 table {
   border-collapse: collapse;
-  /* margin: 0 auto; */
 }
 
 table tr:first-child td {
@@ -64,44 +60,50 @@ table tr td:last-child {
 
 .winner {
   display: block;
-  margin: 25px auto;
+  /* margin: 25px auto; */
   text-align: center;
-  font-family: 'Indie Flower', cursive;
+  font-family: 'Monoton', cursive;
   font-size: 40px;
-  color: #595ca1;
+  color: white;
+  /* padding: 20px; */
 }
 
 #button {
   display: block;
-  margin: 25px auto;
+  margin: 20px auto;
   text-align: center;
+  background-color: white;
+  color: black;
+  font-size: 25px;
+  font-family: 'Monoton', cursive;
+
 }
 
 #playerOneScore {
-  font-family: 'Indie Flower', cursive;
-  font-size: 20px;
-  color: #595ca1;
+  font-family: 'Monoton', cursive;
+  font-size: 30px;
+  color: white;
+  /* align-items:center; */
+  /* padding-right: 40px; */
+
 }
 
 #playerTwoScore {
-  font-family: 'Indie Flower', cursive;
-  font-size: 20px;
-  color: #595ca1;
+  font-family: 'Monoton', cursive;
+  font-size: 30px;
+  color: white;
+  /* padding-left: 40px; */
+
 }
 
-/* .endgame {
-  display: none;
-  width: 200px;
-  top: 120px;
-  background-color: pink;
-  position: relative;
-  left: 50%;
-  margin-left: -100px;
-  padding-top:50px;
-  padding-bottom: 50px;
-  text-align: center;
-  border-radius: 5px;
-  color: white;
-  font-size: 2em; */
+#column1 {
+  flex: 1;
+}
 
+#column2 {
+  flex: 2;
+}
+
+#column3 {
+  flex: 1;
 }

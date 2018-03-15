@@ -5,7 +5,8 @@
     <link rel="stylesheet" href="style.css">
     <script src="js/jquery.js"></script>
     <script src="js/new.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Monoton" rel="stylesheet">
+
     <title>Tic Tac Toe</title>
   </head>
   <body>
@@ -13,10 +14,12 @@
 <h1>Tic Tac Toe</h1>
 
 <div class="container">
-<div class="third" id="playerOneScore">Player One : 0</div>
 
+<div id="column1">
+<div class="third" id="playerOneScore">Player <img src="https://image.flaticon.com/icons/svg/24/24883.svg"> score: 0</div>
+</div>
 
-
+<div id="column2">
 <table class="third" >
   <tr>
     <td class="cell" id="0"></td>
@@ -36,13 +39,19 @@
     <td class="cell" id="8"></td>
   </tr>
 </table>
+</div>
 
-<div class="third" id="playerTwoScore">Player Two : 0</div>
+<div id="column3">
+<div class="third" id="playerTwoScore">Player <img src="https://image.flaticon.com/icons/svg/24/24874.svg"> score: 0</div>
+</div>
 
-<div class="winner"></div>
-<input id="button" type="reset" value="Play again?" />
 
 
 </div>
+<input id="button" type="reset" value="Play again?" />
+
+<div class="winner"></div>
+
+
   </body>
 </html>

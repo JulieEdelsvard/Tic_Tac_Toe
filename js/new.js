@@ -1,16 +1,15 @@
 
 let board = [
-   "-","-","-",
-   "-","-","-",
-   "-","-","-"
+   "","","",
+   "","","",
+   "","",""
   ]
 
-  let player1 = 'O';
-  let player2 = 'X';
+  let player1 = `<img src="https://image.flaticon.com/icons/svg/24/24883.svg">`;
+  let player2 = `<img src="https://image.flaticon.com/icons/svg/24/24874.svg">`;
   let player1Next = true;
   let result = false;
   let counter = 0;
-  // let score = 0;
   let playerOneScore = 0
   let playerTwoScore = 0
 
@@ -23,9 +22,9 @@ const render = function () {
 
 const reset = function () {
   board = [
-     "-","-","-",
-     "-","-","-",
-     "-","-","-"
+     "","","",
+     "","","",
+     "","",""
     ]
   render();
   result = false;
@@ -41,20 +40,18 @@ $( document ).ready(function() {
   const playTurn = function (cell) {
 
     if (player1Next) {
-      board[cell] = "X";
+      board[cell] = `<img src="https://image.flaticon.com/icons/svg/24/24883.svg">`;
       player1Next = false;
     }
 
     else {
-      board[cell] = "O";
+      board[cell] = `<img src="https://image.flaticon.com/icons/svg/24/24874.svg">`;
       player1Next = true;
     }
 
     render(board)
     counter ++;
     checkWin(counter);
-    // playerOneScore ++;
-
 
   }
 
@@ -80,7 +77,7 @@ const checkWin = function (counter) {
     $('.winner').html(winMessage);
 
     playerOneScore ++;
-    let playerOneScoreMessage = `Player 1 score: ${playerOneScore}`
+    let playerOneScoreMessage = `Player ${player1} score: ${playerOneScore}`
     $('#playerOneScore').html(playerOneScoreMessage);
 
 
@@ -98,7 +95,7 @@ const checkWin = function (counter) {
   $('.winner').html(winMessage);
 
   playerTwoScore ++;
-  let playerTwoScoreMessage = `Player 2 score: ${playerTwoScore}`
+  let playerTwoScoreMessage = `Player ${player2} score: ${playerTwoScore}`
   $('#playerTwoScore').html(playerTwoScoreMessage);
 
   }
