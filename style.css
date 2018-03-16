@@ -1,9 +1,4 @@
 
-div {
-  /* border: red solid 1px; */
-}
-
-
 body {
 
   background: #b0cdc0;
@@ -64,19 +59,16 @@ table tr td:last-child {
 
 .winner {
   display: block;
-  /* margin: 25px auto; */
   text-align: center;
   font-family: 'Monoton', cursive;
   font-size: 40px;
   color: white;
-  /* padding: 20px; */
 }
 
 #button {
   display: block;
   margin: 20px auto;
   text-align: center;
-  /* background-color: white; */
   color: white;
   font-size: 25px;
   font-family: 'Monoton', cursive;
@@ -87,8 +79,6 @@ table tr td:last-child {
   font-family: 'Monoton', cursive;
   font-size: 30px;
   color: white;
-  /* align-items:center; */
-  /* padding-right: 40px; */
 
 }
 
@@ -96,7 +86,6 @@ table tr td:last-child {
   font-family: 'Monoton', cursive;
   font-size: 30px;
   color: white;
-  /* padding-left: 40px; */
 
 }
 

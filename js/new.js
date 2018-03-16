@@ -16,7 +16,7 @@ let board = [
 
 const render = function () {
   for (var i = 0; i < board.length; i++) {
-    $('#' + i ).html( board[i])
+    $('#' + i ).html( board[i] )
   }
 }
 
