@@ -22,11 +22,11 @@ The object of Tic Tac Toe is to get three in a row, playing on a three by three 
 
 ## Links
 
-Link to the project: https://julieedelsvard.github.io/project0/
+Link to the project: https://julieedelsvard.github.io/Tic_Tac_Toe/
 
 This project is available to fork at Github.
 After forking enter following commands in your terminal.
-$ git clone https://julieedelsvard.github.io/project0/
+$ git clone https://github.com/JulieEdelsvard/Tic_Tac_Toe.git
 $ cd project0
 
 This repository was created and is currently maintained by @JulieEdelsvard
