@@ -18,7 +18,7 @@ The object of Tic Tac Toe is to get three in a row, playing on a three by three 
 
 ## Demo
 
-[![Screen_Shot_2018-03-16_at_10.07.22.png](https://s17.postimg.org/w3jvzg80v/Screen_Shot_2018-03-16_at_10.07.22.png)](https://postimg.org/image/jox3z4gij/)
+![Tic-Tac_Toe_Demo](https://image.ibb.co/mQsy2d/tictactoe.png)
 
 ## Links
 
